@@ -62,6 +62,7 @@ function Dashboard({ date }) {
 
 	return (
 		<main className="text-center">
+			<ErrorAlert error={reservationsError} />
 			<h1>Dashboard</h1>
 			<h2 className="m-3">Today's Date is {today()}</h2>
 			<div className="mb-3">
@@ -90,7 +91,6 @@ function Dashboard({ date }) {
 			<div className="mb-3 ">
 				<h4 className="mb-0">{date}</h4>
 			</div>
-			<ErrorAlert error={reservationsError} />
 			<div className="d-flex">
 				<div className="col-2">
 					<h5>First Name</h5>

@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { createReservation } from '../utils/api';
+import ErrorAlert from '../layout/ErrorAlert';
 
 export default function NewReservation() {
+  const [reservationsError, setReservationsError] = useState(null);
   const [reservation, setReservation] = useState({
     first_name: '',
     last_name: '',
@@ -16,12 +18,17 @@ export default function NewReservation() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    createReservation(reservation).then(() =>
+    createReservation(reservation)
+    .then(() =>
       history.push(`/dashboard/?date=${reservation.reservation_date}`)
-    );
+    )
+    .catch(setReservationsError)
   }
 
   function handleChange({ target: { name, value } }) {
+    if(name === "people"){
+      value = Number(value)
+    }
     setReservation((previousReservation) => ({
       ...previousReservation,
       [name]: value,
@@ -30,6 +37,7 @@ export default function NewReservation() {
 
   return (
     <form className="reservation-form" onSubmit={handleSubmit}>
+      <ErrorAlert error={reservationsError} />
       <label>
         First Name:
         <input
