@@ -21,6 +21,9 @@
 .vercel
 .env
 /starter_restaurant_reservations
+.eslintcache
+/.screenshots
+
 
 npm-debug.log*
 yarn-debug.log*
