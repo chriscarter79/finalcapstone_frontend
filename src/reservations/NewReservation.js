@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { createReservation } from '../utils/api';
-import ErrorAlert from '../layout/ErrorAlert';
+import ErrorAlert from '../errors/ErrorAlert';
 
 export default function NewReservation() {
   const [reservationsError, setReservationsError] = useState(null);
