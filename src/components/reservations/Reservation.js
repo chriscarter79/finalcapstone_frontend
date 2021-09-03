@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { updateStatus } from "../utils/api";
-import { formatDate, formatTime, formatPhone } from "../utils/date-time";
+import { updateStatus } from "../../utils/api";
+import { formatDate, formatTime, formatPhone } from "../../utils/date-time";
 
 export default function Reservation({ reservation, type }) {
   const date = formatDate(reservation.reservation_date);

@@ -1,8 +1,8 @@
   
 import { useState } from "react";
-import { listReservations } from "../utils/api";
+import { listReservations } from "../../utils/api";
 import ErrorAlert from "../errors/ErrorAlert";
-import Reservation from "./Reservation";
+import Reservation from "../reservations/Reservation";
 
 /**
  * Search Form Component

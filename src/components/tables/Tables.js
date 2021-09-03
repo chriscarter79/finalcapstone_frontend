@@ -1,4 +1,4 @@
-import { clearTable } from "../utils/api";
+import { clearTable } from "../../utils/api";
 
 export default function Reservation({ table }) {
   const handleFinish = async () => {

@@ -5,7 +5,7 @@ import {
   createReservation,
   readReservation,
   updateReservation,
-} from "../utils/api";
+} from "../../utils/api";
 
 function ReservationForm({ type }) {
   const { reservation_id } = useParams();
